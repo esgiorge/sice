@@ -1,0 +1,42 @@
+<div id="micard">
+    <div class="flex justify-content-center fadeinleft" styleClass="button-secondary">
+        <p-card header="Login" subheader="Introduzca sus credenciales" [style]="{width: '360px'}"
+            styleClass="card-shadow">
+            <ng-template pTemplate="header">
+                <img alt="Card" src="../../../../assets/img01.png">
+            </ng-template>
+            <form (ngSubmit)="entrar()" autocomplete="off" [formGroup]="miFormularioLogin">
+                <div class="p-field p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-user"></i>
+                        </span>
+                        <span class="p-float-label">
+                            <input type="text" id="usuario" pInputText class="p-inputtext-sm" formControlName="usuario" >
+                            <label for="inputgroup">Usuario</label>
+                        </span>
+                    </div>
+                    <small *ngIf="campoEsValido('usuario')" id="usuario-help" class="p-error">¡Usuario invalido! Verifique por favor</small>
+                </div>
+                <div class="p-field p-col-12 p-md-4" style="margin-top: 20px; margin-bottom: 30px;">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-key"></i>
+                        </span>
+                        <span class="p-float-label">
+                            <input type="password" id="clave" pInputText class="p-inputtext-sm"  formControlName="clave">
+                            <label for="inputclave">Clave</label>
+                        </span>
+                    </div>
+                    <small *ngIf="campoEsValido('clave')" id="clave-help" class="p-error">¡Clave invalida! Verifique por favor</small>
+                </div>
+             
+             <p-button label="Registrarse" type="button" icon="pi pi-user-plus" styleClass="p-button-sm"
+              pTooltip="Registrarse como nuevo usuario" tooltipPosition="bottom"
+              (click)="registrarse()"></p-button>
+             <p-button label="Cancelar" type ="reset" icon="pi pi-refresh" styleClass="p-button-sm p-button-danger" [style]="{'margin-left': '.5em'}" pTooltip="Limpiar los textos" tooltipPosition="bottom"></p-button>
+             <p-button label="Entrar" type="submit" icon="pi pi-sign-in" styleClass="p-button-sm p-button-info" [style]="{'margin-left': '.5em'}" pTooltip="Entrar al sistema" tooltipPosition="bottom"></p-button>
+            </form>
+        </p-card>
+    </div>
+</div>

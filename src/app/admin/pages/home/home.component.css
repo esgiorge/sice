@@ -1,0 +1,9 @@
+.block-content {
+    padding: 0;
+    border: 1px solid var(--surface-d);
+    border-top: 0 none;
+  }
+
+  a{
+    text-decoration: none;
+  }
